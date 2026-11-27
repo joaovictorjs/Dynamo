@@ -9,6 +9,63 @@
     d:DesignWidth="260"
     x:DataType="vm:MainViewModel"
     mc:Ignorable="d">
+    <UserControl.DataTemplates>
+        <DataTemplate DataType="vm:TextBlockViewModel">
+            <StackPanel Spacing="12">
+                <StackPanel Spacing="4">
+                    <TextBlock Text="Texto" />
+                    <TextBox Text="{Binding Text, Mode=TwoWay}" />
+                </StackPanel>
+
+                <StackPanel Spacing="4">
+                    <TextBlock Text="Tamanho da fonte" />
+                    <NumericUpDown
+                        Minimum="1"
+                        Increment="1"
+                        Value="{Binding FontSize, Mode=TwoWay}" />
+                </StackPanel>
+            </StackPanel>
+        </DataTemplate>
+
+        <DataTemplate DataType="vm:TextBoxViewModel">
+            <StackPanel Spacing="12">
+                <StackPanel Spacing="4">
+                    <TextBlock Text="Rótulo" />
+                    <TextBox Text="{Binding Label, Mode=TwoWay}" />
+                </StackPanel>
+
+                <StackPanel Spacing="4">
+                    <TextBlock Text="Placeholder" />
+                    <TextBox Text="{Binding Placeholder, Mode=TwoWay}" />
+                </StackPanel>
+            </StackPanel>
+        </DataTemplate>
+
+        <DataTemplate DataType="vm:CalendarDatePickerViewModel">
+            <StackPanel Spacing="4">
+                <TextBlock Text="Rótulo" />
+                <TextBox Text="{Binding Label, Mode=TwoWay}" />
+            </StackPanel>
+        </DataTemplate>
+
+        <DataTemplate DataType="vm:CheckBoxViewModel">
+            <StackPanel Spacing="4">
+                <TextBlock Text="Rótulo" />
+                <TextBox Text="{Binding Label, Mode=TwoWay}" />
+            </StackPanel>
+        </DataTemplate>
+
+        <DataTemplate DataType="vm:SpacingViewModel">
+            <StackPanel Spacing="4">
+                <TextBlock Text="Altura" />
+                <NumericUpDown
+                    Minimum="0"
+                    Increment="1"
+                    Value="{Binding Height, Mode=TwoWay}" />
+            </StackPanel>
+        </DataTemplate>
+    </UserControl.DataTemplates>
+
     <Grid RowDefinitions="Auto, *">
         <Border
             Grid.Row="0"
@@ -21,6 +78,24 @@
                 Text="Parâmetros do campo" />
         </Border>
 
-        <Grid Grid.Row="1" />
+        <ScrollViewer Grid.Row="1">
+            <StackPanel
+                Margin="12"
+                Spacing="12">
+                <StackPanel Spacing="4">
+                    <TextBlock Text="ID" />
+                    <TextBox
+                        IsReadOnly="True"
+                        Text="{Binding SelectedNode.Id}" />
+                </StackPanel>
+
+                <StackPanel Spacing="4">
+                    <TextBlock Text="Nome" />
+                    <TextBox Text="{Binding SelectedNode.Name, Mode=TwoWay}" />
+                </StackPanel>
+
+                <ContentControl Content="{Binding SelectedNode}" />
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </UserControl>
