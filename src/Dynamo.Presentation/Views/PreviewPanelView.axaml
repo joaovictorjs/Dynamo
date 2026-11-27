@@ -32,7 +32,9 @@
                     </StackPanel>
                 </DataTemplate>
                 <DataTemplate DataType="vm:CalendarDatePickerViewModel">
-                    <CalendarDatePicker SelectedDate="{Binding SelectedDate, Mode=TwoWay}" />
+                    <CalendarDatePicker
+                        HorizontalAlignment="Stretch"
+                        SelectedDate="{Binding SelectedDate, Mode=TwoWay}" />
                 </DataTemplate>
                 <DataTemplate DataType="vm:CheckBoxViewModel">
                     <CheckBox
