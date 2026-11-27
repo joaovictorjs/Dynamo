@@ -38,20 +38,39 @@
                     <TextBlock Text="Dica" />
                     <TextBox Text="{Binding Placeholder, Mode=TwoWay}" />
                 </StackPanel>
+
+                <StackPanel Spacing="4">
+                    <TextBlock Text="Alvo" />
+                    <TextBox Text="{Binding Target, Mode=TwoWay}" />
+                </StackPanel>
             </StackPanel>
         </DataTemplate>
 
         <DataTemplate DataType="vm:CalendarDatePickerViewModel">
-            <StackPanel Spacing="4">
-                <TextBlock Text="Rótulo" />
-                <TextBox Text="{Binding Label, Mode=TwoWay}" />
+            <StackPanel Spacing="12">
+                <StackPanel Spacing="4">
+                    <TextBlock Text="Rótulo" />
+                    <TextBox Text="{Binding Label, Mode=TwoWay}" />
+                </StackPanel>
+
+                <StackPanel Spacing="4">
+                    <TextBlock Text="Alvo" />
+                    <TextBox Text="{Binding Target, Mode=TwoWay}" />
+                </StackPanel>
             </StackPanel>
         </DataTemplate>
 
         <DataTemplate DataType="vm:CheckBoxViewModel">
-            <StackPanel Spacing="4">
-                <TextBlock Text="Rótulo" />
-                <TextBox Text="{Binding Label, Mode=TwoWay}" />
+            <StackPanel Spacing="12">
+                <StackPanel Spacing="4">
+                    <TextBlock Text="Rótulo" />
+                    <TextBox Text="{Binding Label, Mode=TwoWay}" />
+                </StackPanel>
+
+                <StackPanel Spacing="4">
+                    <TextBlock Text="Alvo" />
+                    <TextBox Text="{Binding Target, Mode=TwoWay}" />
+                </StackPanel>
             </StackPanel>
         </DataTemplate>
 

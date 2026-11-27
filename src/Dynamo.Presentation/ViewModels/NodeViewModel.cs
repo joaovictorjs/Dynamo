@@ -31,6 +31,9 @@ public partial class TextBoxViewModel : NodeViewModel
 
     [ObservableProperty]
     public partial string Text { get; set; } = string.Empty;
+
+    [ObservableProperty]
+    public partial string Target { get; set; } = string.Empty;
 }
 
 public partial class CalendarDatePickerViewModel : NodeViewModel
@@ -40,6 +43,9 @@ public partial class CalendarDatePickerViewModel : NodeViewModel
 
     [ObservableProperty]
     public partial DateTime? SelectedDate { get; set; }
+
+    [ObservableProperty]
+    public partial string Target { get; set; } = string.Empty;
 }
 
 public partial class CheckBoxViewModel : NodeViewModel
@@ -49,6 +55,9 @@ public partial class CheckBoxViewModel : NodeViewModel
 
     [ObservableProperty]
     public partial bool IsChecked { get; set; }
+
+    [ObservableProperty]
+    public partial string Target { get; set; } = string.Empty;
 }
 
 public partial class SpacingViewModel : NodeViewModel
