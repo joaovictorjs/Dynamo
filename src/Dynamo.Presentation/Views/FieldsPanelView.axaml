@@ -10,8 +10,33 @@
                 Padding="{DynamicResource PanelHeaderPadding}"
                 BorderThickness="0,0,0,1"
                 BorderBrush="{DynamicResource DividerStrokeColorDefaultBrush}">
-            <TextBlock Text="Campos"
-                       VerticalAlignment="Center" />
+            <Grid ColumnDefinitions="*, Auto">
+                <TextBlock Grid.Column="0"
+                           Text="Campos"
+                           VerticalAlignment="Center" />
+
+                <StackPanel Grid.Column="1"
+                            Orientation="Horizontal"
+                            Spacing="4"
+                            VerticalAlignment="Center">
+                    <Button>
+                        <LucideIcon Kind="Plus" Size="16" />
+                        <Button.Flyout>
+                            <MenuFlyout>
+                                <MenuItem Header="Bloco de texto" />
+                                <MenuItem Header="Caixa de texto" />
+                                <MenuItem Header="Seletor de data em calendário" />
+                                <MenuItem Header="Caixa de seleção" />
+                                <MenuItem Header="Espaçamento" />
+                            </MenuFlyout>
+                        </Button.Flyout>
+                    </Button>
+
+                    <Button>
+                        <LucideIcon Kind="Trash" Size="16" />
+                    </Button>
+                </StackPanel>
+            </Grid>
         </Border>
     </Grid>
 </UserControl>
