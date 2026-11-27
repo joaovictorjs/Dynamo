@@ -32,6 +32,7 @@ public partial class MainViewModel : ViewModelBase
     {
         Id = Guid.NewGuid(),
         Name = "Seletor de data em calendário",
+        Label = "Seletor de data em calendário",
     });
 
     [RelayCommand]

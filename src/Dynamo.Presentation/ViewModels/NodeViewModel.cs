@@ -36,6 +36,9 @@ public partial class TextBoxViewModel : NodeViewModel
 public partial class CalendarDatePickerViewModel : NodeViewModel
 {
     [ObservableProperty]
+    public partial string Label { get; set; } = string.Empty;
+
+    [ObservableProperty]
     public partial DateTime? SelectedDate { get; set; }
 }
 
