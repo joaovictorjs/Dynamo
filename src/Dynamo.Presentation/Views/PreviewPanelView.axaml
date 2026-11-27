@@ -4,8 +4,45 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:Dynamo.Presentation.ViewModels"
     d:DesignHeight="450"
     d:DesignWidth="540"
+    x:DataType="vm:MainViewModel"
     mc:Ignorable="d">
-    <Grid />
+    <Grid ColumnDefinitions="*, 2*, *" RowDefinitions="*, 2*, *">
+        <ItemsControl
+            Grid.Row="1"
+            Grid.Column="1"
+            ItemsSource="{Binding Nodes}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Spacing="8" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.DataTemplates>
+                <DataTemplate DataType="vm:TextBlockViewModel">
+                    <TextBlock Text="{Binding Text}" FontSize="{Binding FontSize}" />
+                </DataTemplate>
+                <DataTemplate DataType="vm:TextBoxViewModel">
+                    <StackPanel Spacing="4">
+                        <TextBlock Text="{Binding Label}" />
+                        <TextBox
+                            Text="{Binding Text, Mode=TwoWay}"
+                            PlaceholderText="{Binding Placeholder}" />
+                    </StackPanel>
+                </DataTemplate>
+                <DataTemplate DataType="vm:CalendarDatePickerViewModel">
+                    <CalendarDatePicker SelectedDate="{Binding SelectedDate, Mode=TwoWay}" />
+                </DataTemplate>
+                <DataTemplate DataType="vm:CheckBoxViewModel">
+                    <CheckBox
+                        Content="{Binding Label}"
+                        IsChecked="{Binding IsChecked, Mode=TwoWay}" />
+                </DataTemplate>
+                <DataTemplate DataType="vm:SpacingViewModel">
+                    <Panel Height="{Binding Height}" />
+                </DataTemplate>
+            </ItemsControl.DataTemplates>
+        </ItemsControl>
+    </Grid>
 </UserControl>
