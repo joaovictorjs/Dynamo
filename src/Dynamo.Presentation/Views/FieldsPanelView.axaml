@@ -1,11 +1,13 @@
-﻿<UserControl
+<UserControl
     x:Class="Dynamo.Presentation.Views.FieldsPanelView"
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:Dynamo.Presentation.ViewModels"
     d:DesignHeight="450"
     d:DesignWidth="260"
+    x:DataType="vm:MainViewModel"
     mc:Ignorable="d">
     <Grid RowDefinitions="Auto, *">
         <Border
@@ -29,20 +31,31 @@
                         <LucideIcon Kind="Plus" />
                         <Button.Flyout>
                             <MenuFlyout>
-                                <MenuItem Header="Bloco de texto" />
-                                <MenuItem Header="Caixa de texto" />
-                                <MenuItem Header="Seletor de data em calendário" />
-                                <MenuItem Header="Caixa de seleção" />
-                                <MenuItem Header="Espaçamento" />
+                                <MenuItem Header="Bloco de texto" Command="{Binding AddTextBlockCommand}" />
+                                <MenuItem Header="Caixa de texto" Command="{Binding AddTextBoxCommand}" />
+                                <MenuItem Header="Seletor de data em calendário" Command="{Binding AddCalendarDatePickerCommand}" />
+                                <MenuItem Header="Caixa de seleção" Command="{Binding AddCheckBoxCommand}" />
+                                <MenuItem Header="Espaçamento" Command="{Binding AddSpacingCommand}" />
                             </MenuFlyout>
                         </Button.Flyout>
                     </Button>
 
-                    <Button>
+                    <Button Command="{Binding RemoveSelectedNodeCommand}">
                         <LucideIcon Kind="Trash" />
                     </Button>
                 </StackPanel>
             </Grid>
         </Border>
+
+        <TreeView
+            Grid.Row="1"
+            ItemsSource="{Binding Nodes}"
+            SelectedItem="{Binding SelectedNode, Mode=TwoWay}">
+            <TreeView.ItemTemplate>
+                <TreeDataTemplate DataType="vm:NodeViewModel">
+                    <TextBlock Text="{Binding Name}" />
+                </TreeDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
     </Grid>
 </UserControl>
