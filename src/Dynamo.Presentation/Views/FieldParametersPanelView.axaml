@@ -35,7 +35,7 @@
                 </StackPanel>
 
                 <StackPanel Spacing="4">
-                    <TextBlock Text="Placeholder" />
+                    <TextBlock Text="Dica" />
                     <TextBox Text="{Binding Placeholder, Mode=TwoWay}" />
                 </StackPanel>
             </StackPanel>
