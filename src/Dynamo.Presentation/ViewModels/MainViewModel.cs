@@ -18,6 +18,8 @@ public partial class MainViewModel : ViewModelBase
     {
         Id = Guid.NewGuid(),
         Name = "Bloco de texto",
+        Text = "Bloco de texto",
+        FontSize = 14,
     });
 
     [RelayCommand]
@@ -25,6 +27,7 @@ public partial class MainViewModel : ViewModelBase
     {
         Id = Guid.NewGuid(),
         Name = "Caixa de texto",
+        Label = "Caixa de texto",
     });
 
     [RelayCommand]
@@ -40,6 +43,7 @@ public partial class MainViewModel : ViewModelBase
     {
         Id = Guid.NewGuid(),
         Name = "Caixa de seleção",
+        Label = "Caixa de seleção",
     });
 
     [RelayCommand]
