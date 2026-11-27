@@ -1,0 +1,5 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Dynamo.Presentation/Dynamo.Presentation.csproj" />
+  </Folder>
+</Solution>
