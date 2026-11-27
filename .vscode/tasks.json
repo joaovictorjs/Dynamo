@@ -1,0 +1,30 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "run Dynamo.Presentation",
+      "command": "dotnet",
+      "type": "shell",
+      "args": ["run", "--no-restore"],
+      "options": {
+        "cwd": "${workspaceFolder}/src/Dynamo.Presentation",
+        "statusbar": {
+          "icon": {
+            "id": "play"
+          },
+          "label": "Dynamo.Presentation",
+          "running": {
+            "backgroundColor": "statusBarItem.warningBackground"
+          }
+        }
+      },
+      "group": "build",
+      "presentation": {
+        "reveal": "silent"
+      },
+      "problemMatcher": "$msCompile"
+    }
+  ]
+}
