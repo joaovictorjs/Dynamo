@@ -81,7 +81,8 @@
         <ScrollViewer Grid.Row="1">
             <StackPanel
                 Margin="12"
-                Spacing="12">
+                Spacing="12"
+                IsVisible="{Binding SelectedNode, Converter={x:Static ObjectConverters.IsNotNull}}">
                 <StackPanel Spacing="4">
                     <TextBlock Text="ID" />
                     <TextBox
