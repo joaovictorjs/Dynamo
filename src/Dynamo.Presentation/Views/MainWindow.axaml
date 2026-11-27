@@ -19,6 +19,7 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" MinWidth="260" />
+            <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="3*" />
         </Grid.ColumnDefinitions>
 
@@ -27,5 +28,9 @@
                 BorderBrush="{DynamicResource DividerStrokeColorDefaultBrush}">
             <views:FieldsPanelView />
         </Border>
+
+        <GridSplitter Grid.Column="1"
+                      Width="4"
+                      ResizeDirection="Columns" />
     </Grid>
 </Window>
