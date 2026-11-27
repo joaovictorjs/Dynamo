@@ -9,6 +9,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceInclude Source="/Themes/Density.axaml" />
                 <ResourceInclude Source="/Themes/GridSplitter.axaml" />
+                <ResourceInclude Source="/Themes/LucideIcon.axaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
