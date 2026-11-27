@@ -51,6 +51,7 @@ public partial class MainViewModel : ViewModelBase
     {
         Id = Guid.NewGuid(),
         Name = "Espaçamento",
+        Height = 16,
     });
 
     [RelayCommand(CanExecute = nameof(CanRemoveSelectedNode))]
