@@ -5,3 +5,6 @@
 - Use the imperative mood, no period at the end, and approximately 72 characters
 - Don't commit style with functional changes
 - Don't auto commit a change
+
+## Dependency injection instruction
+- Register dependencies as Transient by default
